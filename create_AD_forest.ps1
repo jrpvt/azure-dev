@@ -10,5 +10,5 @@ Param(
   [Security.SecureString]$password
 )
 
-Install-WindowsFeature AD-Domain-Services -IncludeManagementTools | Out-File c:\log1.txt
-Install-ADDSForest -DomainName $domainName -ForestMode $forestMode -SafeModeAdministratorPassword $password -Force | Out-File c:\log2.txt
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools 2>> c:\log1.txt
+#Install-ADDSForest -DomainName $domainName -ForestMode $forestMode -SafeModeAdministratorPassword $password -Force | Out-File c:\log2.txt
