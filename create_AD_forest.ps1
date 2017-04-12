@@ -7,8 +7,8 @@ Param(
   [string]$forestMode,
 
   [Parameter(Mandatory=$True,Position=3)]
-  [string]$password
+  [string]$dsrmPassword
 )
-#$securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
+$dsrmSecurePassword = ConvertTo-SecureString -String $dsrmPassword -AsPlainText -Force
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-#Install-ADDSForest -DomainName $domainName -ForestMode $forestMode -SafeModeAdministratorPassword $securePassword -Force
+Install-ADDSForest -DomainName $domainName -ForestMode $forestMode -SafeModeAdministratorPassword $dsrmSecurePassword -Force
