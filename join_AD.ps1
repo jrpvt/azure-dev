@@ -15,4 +15,4 @@ Param(
 $adminSecurePassword = ConvertTo-SecureString -String $adminPassword -AsPlainText -Force
 $joinADcredential = New-Object System.Management.Automation.PSCredential ($adminUsername, $adminSecurePassword)
 
-Add-Computer -Credential $joinADcredential -DomainName $domainName -NewName $serverName;Restart-Computer -Force
+Add-Computer -Credential $joinADcredential -DomainName $domainName;Restart-Computer -Force
